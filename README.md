@@ -2,7 +2,7 @@
 
 Sistema de consulta de cronograma e lotação dos aplicadores do **SAVEAL 2026** no município de Feira Grande - AL.
 
-🌐 **Acesse online:** [https://douglas14031999.github.io/lotacao-saveal-2026-feira-grande-al/](https://douglas14031999.github.io/lotacao-saveal-2026-feira-grande-al/)
+🌐 **Acesse online:** [https://saveal.provacanoa.tech/](https://saveal.provacanoa.tech/)
 
 ---
 
@@ -17,20 +17,11 @@ Sistema de consulta de cronograma e lotação dos aplicadores do **SAVEAL 2026**
 
 ---
 
-## 🌐 Configuração de Subdomínio Personalizado (Hostinger / DNS)
+## 🌐 Domínio Personalizado
 
-Para vincular um subdomínio da Hostinger a este projeto:
-
-1. **Hostinger (hPanel):**
-   - Acesse **Domínios** -> selecione seu domínio -> **DNS / Servidores de Nomes**.
-   - Adicione um registro:
-     - **Tipo:** `CNAME`
-     - **Nome:** prefixo do subdomínio (ex: `saveal` para `saveal.seudominio.com.br`)
-     - **Aponta para:** `douglas14031999.github.io`
-     - **TTL:** `14400` (ou padrão)
-2. **GitHub Pages:**
-   - Adicione o arquivo `CNAME` com o subdomínio completo na raiz deste repositório (ou configure em *Settings > Pages > Custom domain*).
-   - Ative a opção **Enforce HTTPS** após a propagação do DNS.
+- **Subdomínio:** `saveal.provacanoa.tech`
+- **DNS (Hostinger):** CNAME `saveal` apontando para `douglas14031999.github.io`
+- **Segurança:** HTTPS forçado com certificado SSL ativo.
 
 ---
 
