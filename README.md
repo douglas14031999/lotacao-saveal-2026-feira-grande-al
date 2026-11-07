@@ -17,6 +17,23 @@ Sistema de consulta de cronograma e lotação dos aplicadores do **SAVEAL 2026**
 
 ---
 
+## 🌐 Configuração de Subdomínio Personalizado (Hostinger / DNS)
+
+Para vincular um subdomínio da Hostinger a este projeto:
+
+1. **Hostinger (hPanel):**
+   - Acesse **Domínios** -> selecione seu domínio -> **DNS / Servidores de Nomes**.
+   - Adicione um registro:
+     - **Tipo:** `CNAME`
+     - **Nome:** prefixo do subdomínio (ex: `saveal` para `saveal.seudominio.com.br`)
+     - **Aponta para:** `douglas14031999.github.io`
+     - **TTL:** `14400` (ou padrão)
+2. **GitHub Pages:**
+   - Adicione o arquivo `CNAME` com o subdomínio completo na raiz deste repositório (ou configure em *Settings > Pages > Custom domain*).
+   - Ative a opção **Enforce HTTPS** após a propagação do DNS.
+
+---
+
 ## 🚀 Como Executar Localmente
 
 Basta abrir o arquivo `index.html` em qualquer navegador web:
