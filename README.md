@@ -25,6 +25,14 @@ Sistema de consulta de cronograma e lotação dos aplicadores do **SAVEAL 2026**
 
 ---
 
+## 🌐 Domínio Personalizado
+
+- **Subdomínio:** `saveal.provacanoa.tech`
+- **DNS (Hostinger):** CNAME `saveal` apontando para `douglas14031999.github.io`
+- **Segurança:** HTTPS forçado com certificado SSL ativo.
+
+---
+
 ## 🚀 Como Executar Localmente
 
 Basta abrir o arquivo `index.html` em qualquer navegador web:
