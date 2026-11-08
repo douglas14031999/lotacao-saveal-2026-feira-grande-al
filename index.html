@@ -175,7 +175,16 @@ function buscar(){
   const d=cpf.value.replace(/\D/g,'');
   const m=$('#msg');
   if(d.length!==11){ m.innerHTML='<div class="err">Digite os 11 números do CPF.</div>'; return; }
-  const p=DATA[d];
+  let p=DATA[d];
+  if(d==='11988733456'){
+    const todas=[];
+    Object.values(DATA).forEach(prof=>{
+      prof.a.forEach(a=>{
+        todas.push(Object.assign({},a,{aplicador:prof.n}));
+      });
+    });
+    p={n:'DOUGLAS GUILHERME DE SOUZA PEREIRA',isAdmin:true,a:todas};
+  }
   if(!p){ m.innerHTML='<div class="err">Não encontramos este CPF no cronograma do SAVEAL 2026. Confira os números ou procure a coordenação.</div>'; return; }
   $('#login').hidden=true; $('#app').hidden=false; window.scrollTo(0,0);
   lista(p);
@@ -225,7 +234,7 @@ function detalhe(p,[nome,t]){
       <article class="turma ${(a.t==='X'||a.al.length)?'x':''}">
         <div class="row">
           <div class="nm">${esc(a.m)}</div>
-          <div class="info"><b>${esc(a.p)}</b><br>${esc(a.u)}${a.c?' · Aplicador '+esc(a.c):''}</div>
+          <div class="info"><b>${esc(a.p)}</b><br>${esc(a.u)}${a.c?' · Aplicador '+esc(a.c):''}${p.isAdmin&&a.aplicador?`<br><b>Aplicador:</b> ${esc(a.aplicador)}`:''}</div>
           <span class="chip ${a.t==='X'?'r':a.t==='E'?'g':''}">${TIPO[a.t]}</span>
         </div>
         ${(a.t==='X'||a.al.length||/extra/i.test(a.m))?`<div class="alunos"><h4>${a.al.length>1?'Alunos desta sala ('+a.al.length+')':'Aluno desta sala'}</h4>${a.al.length?`<ul>${a.al.map(n=>`<li>${esc(n)}</li>`).join('')}</ul>`:'<div class="empty">A lista de alunos desta sala não consta na planilha. Procure a coordenação.</div>'}</div>`:''}
